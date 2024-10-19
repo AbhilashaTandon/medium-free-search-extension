@@ -5,11 +5,12 @@
     "description": "Search for free versions of paywalled Medium articles.",
     "permissions": ["activeTab", "scripting", "tabs", "storage"],
     "background": {
-      "service_worker": "background.js" 
+      "service_worker": "bundle.js" 
     },
     "content_scripts": [
       {
-        "js": ["content.js"]
+        "matches": ["<all_urls>"],
+        "js": ["bundle.js"]
       }
     ],
     "action": {

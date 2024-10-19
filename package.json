@@ -1,5 +1,13 @@
 {
   "devDependencies": {
+    "@babel/preset-env": "^7.25.8",
     "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "babel-loader": "^9.2.1"
   }
 }
