@@ -2,6 +2,9 @@
 
 //<meta data-rh="true" property="og:site_name" content="Medium">
 
+import axios, { isCancel, AxiosError } from "axios";
+console.log("axios testing" + axios.isCancel("something"));
+
 if (isOnMedium()) {
   if (isPaywalled()) {
     const articleTitle = document.querySelector("h1").innerText;
@@ -70,8 +73,17 @@ function findArticle(request, sender, sendResponse) {
       query
     )}`;
     console.log("[searchUrl]: " + searchUrl);
+
+    const AXIOS_OPTIONS = {
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36",
+      },
+      params: { q: `${searchUrl}`, hl: "en", gl: "us" },
+    };
     // Fetch the search results
-    fetch(searchUrl)
+    axios
+      .get(searchUrl, AXIOS_OPTIONS)
       .then((response) => response.text())
       .then((html) => {
         // Parse the HTML to extract the first search result
