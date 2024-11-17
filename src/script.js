@@ -5,6 +5,7 @@
 import axios, { isCancel, AxiosError } from "axios";
 console.log("axios testing" + axios.isCancel("something"));
 
+
 if (isOnMedium()) {
   if (isPaywalled()) {
     const articleTitle = document.querySelector("h1").innerText;

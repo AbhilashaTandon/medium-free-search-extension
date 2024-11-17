@@ -1,4 +1,5 @@
 const path = require("path");
+const dotenv = require("dotenv-webpack");
 
 module.exports = {
   entry: "./src/script.js",
@@ -20,6 +21,18 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    fallback: {
+      path: false,
+      os: false,
+      crypto: false,
+    },
+  },
   mode: "development",
   devtool: "source-map", // Avoid 'unsafe-eval' Content Security Policy (CSP) issue
+  plugins: [
+    new dotenv({
+      path: ".env",
+    }),
+  ],
 };
