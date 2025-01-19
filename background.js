@@ -1,4 +1,3 @@
-
 import { config } from "./config.js";
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   try {

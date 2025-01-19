@@ -1,10 +1,35 @@
 #freeLinkDiv {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    padding: 10px;
-    z-index: 1000;
-  }
-  
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1000;
+}
+
+body {
+  width: 200px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+button {
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
